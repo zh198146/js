@@ -177,14 +177,21 @@ $(() => {
           let id = parseInt($(_this).parents('.item').attr('data-id'));
           // console.log(id);
           // 把对应id的数据读取出来
-          let obj = arr.find(e => {
-            return e.pID === id;
-          });
-          // console.log(obj);
-          // 把对应的id的数据从本地存储里面移除
-          // arr.splice(从哪里开始删除,总共删除多少个);
-          let index = arr.indexOf(obj);
+          // let obj = arr.find(e => {
+          //   return e.pID === id;
+          // });
+          // // console.log(obj);
+          // // 把对应的id的数据从本地存储里面移除
+          // // arr.splice(从哪里开始删除,总共删除多少个);
+          // let index = arr.indexOf(obj);
           // console.log(index);
+
+          // 在h5里面的，数组新增了一个方法，获取满足条件的元素的索引          
+          let index = arr.findIndex((e)=>{
+            return e.pID === id
+          })
+          // console.log(index);
+
           arr.splice(index, 1);
           // 把数据覆盖回本地
           let jsonStr = JSON.stringify(arr);
