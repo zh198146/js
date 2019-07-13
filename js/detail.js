@@ -68,5 +68,7 @@ $(() => {
     // 把数组变成json格式的字符串，存储到localStorage里面
     jsonStr = JSON.stringify(arr);
     localStorage.setItem('shopCartData', jsonStr);
+    // 我们可以直接点击之后，跳转到购物车页面，进行结算
+    location.href = 'cart.html';
   })
 });
