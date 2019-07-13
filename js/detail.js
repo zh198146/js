@@ -48,6 +48,7 @@ $(() => {
     let isExit = arr.find(e=>{
       return e.pID === id;
     });
+    
     // console.log(isExit);
     // 如果isExit 是undefined，就是没有
     if (isExit !== undefined) {
